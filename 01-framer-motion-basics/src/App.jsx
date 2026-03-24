@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import {motion} from 'motion/react'
+import { hover } from "motion"
 
 const App = () => {
   const [info, setInfo] = useState([]);
@@ -24,10 +26,18 @@ const App = () => {
     <div className='grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-9 container mx-auto py-13'>
       {info.length > 0 ? (
         info.map((meal) => (
-          <div key={meal.idMeal} className='bg-white shadow-2xl p-4 flex flex-col lg:flex-row gap-5 justify-between rounded-2xl cursor-pointer'>
+          <motion.div key={meal.idMeal} 
+          whileHover={{
+            scale : 1.1,
+            transition : {
+              duration : 0.3
+            }
+          }}
+          className='bg-white shadow-2xl p-4 flex flex-col lg:flex-row gap-5 justify-between rounded-2xl cursor-pointer'>
+
             <div className='flex flex-col gap-8 items-start'>
               <img className='rounded-2xl w-full h-40 object-cover' src={meal.strMealThumb} alt={meal.strMeal} width={200} />
-              <button className='px-3 py-2 bg-green-600 rounded-2xl text-[16px] font-medium border border-transparent'>Order Now</button>
+              <button className='px-3 py-2 bg-green-600 rounded-2xl text-[16px] font-medium border border-transparent cursor-pointer'>Order Now</button>
             </div>
             
             <div className='flex flex-col justify-between'>
@@ -35,7 +45,7 @@ const App = () => {
             <p className='font-medium text-[#454545]'>price : ${Math.floor(Math.random() * (1000 - 100 + 1)) + 100}</p>
             </div>
             
-          </div>
+          </motion.div>
           
         ))
       ) : (
