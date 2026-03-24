@@ -27,6 +27,13 @@ const App = () => {
       {info.length > 0 ? (
         info.map((meal) => (
           <motion.div key={meal.idMeal} 
+          drag
+          dragConstraints = {{
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
+          }}
           whileHover={{
             scale : 1.1,
             transition : {
