@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { motion, useScroll } from "motion/react";
-import { hover } from "motion";
+import { motion, useScroll, hover } from "motion/react";
 import CircularProgress from '@mui/material/CircularProgress';
 
 const App = () => {
@@ -28,13 +27,16 @@ const App = () => {
   return (
     <div>
       <motion.div
+      
         style={{ scaleX: scrollYProgress, originX: 0 }}
         className="bg-red-400 w-full h-1 fixed top-0 left-0 z-50 rounded-full"
       ></motion.div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-9 container mx-auto py-13">
+
         {info.length > 0 ? (
           info.map((meal) => (
+
             <motion.div
               key={meal.idMeal}
               drag
@@ -45,7 +47,7 @@ const App = () => {
                 left: 0,
               }}
               whileHover={{
-                scale: 1.1,
+                scale: 1.2,
                 transition: {
                   duration: 0.3,
                 },
@@ -53,7 +55,8 @@ const App = () => {
               className="bg-white shadow-2xl p-4 flex flex-col gap-5 justify-between rounded-2xl cursor-pointer"
             >
               <div className="flex flex-col gap-8 items-start">
-                <img
+                <motion.img
+    
                   className="rounded-2xl w-full h-40 object-cover"
                   src={meal.strMealThumb}
                   alt={meal.strMeal}
@@ -66,9 +69,18 @@ const App = () => {
                 <p className="font-medium text-[#454545]">
                   price : ${Math.floor(Math.random() * (1000 - 100 + 1)) + 100}
                 </p>
-                <button className="w-full px-4 py-3 bg-green-500 rounded-2xl text-white font-semibold cursor-pointer">
+                <motion.button 
+                whileTap={{
+                  opacity : 0.5,
+                  scale : 0.9
+                }}
+
+                transition={{
+                  duration : 0.2
+                }}
+                className="w-full px-4 py-3 bg-green-500 rounded-2xl text-white font-semibold cursor-pointer">
                   Order Now
-                </button>
+                </motion.button>
               </div>
             </motion.div>
           ))
