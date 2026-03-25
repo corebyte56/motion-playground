@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, useScroll } from "motion/react";
 import { hover } from "motion";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const App = () => {
   const { scrollYProgress } = useScroll();
@@ -74,7 +75,7 @@ const App = () => {
         ) : (
           <div className=" h-screen w-screen">
             <h3 className=" text-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold">
-              Loading...
+              <CircularProgress />
             </h3>
           </div>
         )}
