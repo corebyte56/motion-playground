@@ -3,6 +3,13 @@ import {motion} from 'motion/react'
 const App = () => {
   return (
     <motion.div 
+    drag
+    dragConstraints={{
+      top: 0,
+      bottom: 700,
+      left:400,
+      right:400
+    }}
     initial = {{
       x: 100,
       y:0
