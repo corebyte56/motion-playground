@@ -65,7 +65,7 @@ const App = () => {
                 <p className="font-medium text-[#454545]">
                   price : ${Math.floor(Math.random() * (1000 - 100 + 1)) + 100}
                 </p>
-                <button className="w-full px-4 py-3 bg-green-500 rounded-2xl text-white font-semibold">
+                <button className="w-full px-4 py-3 bg-green-500 rounded-2xl text-white font-semibold cursor-pointer">
                   Order Now
                 </button>
               </div>
