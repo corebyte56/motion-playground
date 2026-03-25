@@ -36,7 +36,7 @@ const App = () => {
         className="bg-red-400 w-full h-1 fixed top-0 left-0 z-50 rounded-full"
       ></motion.div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-3 container mx-auto py-13 px-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-4 container mx-auto py-13 px-4 ">
         {info.length > 0 ? (
           info.map((meal) => (
             <motion.div
@@ -49,12 +49,12 @@ const App = () => {
                 left: 0,
               }}
               whileHover={{
-                scale: 1.2,
+                scale: 1.1,
                 transition: {
                   duration: 0.3,
                 },
               }}
-              className="bg-white/70 backdrop-blur-lg shadow-2xl p-4 flex flex-col gap-5 justify-between rounded-2xl cursor-pointer"
+              className="bg-white/70 backdrop-blur-lg shadow-2xl p-4 flex flex-col gap-8 justify-between rounded-2xl cursor-pointer h-90"
             >
               {/* Img */}
               <div className="flex flex-col gap-8 items-start">
