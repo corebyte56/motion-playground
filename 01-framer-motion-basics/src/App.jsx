@@ -36,7 +36,7 @@ const App = () => {
         className="bg-red-400 w-full h-1 fixed top-0 left-0 z-50 rounded-full"
       ></motion.div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-9 container mx-auto py-13">
+      <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-3 container mx-auto py-13 px-4">
         {info.length > 0 ? (
           info.map((meal) => (
             <motion.div
