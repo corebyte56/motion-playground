@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, hover } from "motion/react";
 
 const Navbar = () => {
   return (
@@ -24,14 +24,30 @@ const Navbar = () => {
         </div>
 
         {/* Right side */}
-        <div className="flex items-center gap-4">
-          <button className="hidden sm:block px-4 py-2 rounded-2xl cursor-pointer border border-green-500 text-green-600 hover:bg-green-500 hover:text-white transition">
+        <div className ="flex items-center gap-4">
+          <motion.button
+          whileTap={{
+                    opacity: 0.1,
+                    scale: 0.2,
+                  }}
+                  transition={{
+                    
+                  }}
+          className="hidden sm:block px-4 py-2 rounded-2xl border border-green-500 text-green-600 cursor-pointer hover:bg-green-500 hover:text-white transition">
             Login
-          </button>
+          </motion.button>
 
-          <button className="px-4 py-2 bg-green-500 text-white rounded-2xl cursor-pointer hover:bg-green-600 transition shadow-md">
+          <motion.button
+          whileTap={{
+                    opacity: 0.1,
+                    scale: 0.2,
+                  }}
+                  transition={{
+                    
+                  }}
+          className="px-4 py-2 border border-transparent bg-green-500 text-white rounded-2xl cursor-pointer hover:bg-transparent hover:text-green-600 hover:border hover:border-green-500 transition shadow-md">
             Sign Up
-          </button>
+          </motion.button>
         </div>
       </div>
     </motion.div>
